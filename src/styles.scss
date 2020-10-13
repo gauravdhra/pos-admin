@@ -1,0 +1,948 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	font-family: 'Montserrat', sans-serif;
+}
+
+.body_bg{
+	background: #000;
+	padding: 40px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.left_side_bar{
+	width: 20%;
+	float: left;
+	padding: 0 10px;
+}
+
+.center_bar{
+	width: 52%;
+	float: left;
+	padding: 0 15px;
+}
+
+.right_side_bar{
+	width: 28%;
+	float: left;
+	padding: 0 15px 0 5px;
+}
+
+.right_full_bar{
+    width: 80%;
+    float: left;
+    padding: 0 15px;
+}
+
+/*_________________________________________________page 1 Branches css____________________________________________________*/
+/*_________________________________________________page 1 Branches css____________________________________________________*/
+.top_button_left{
+	width: 48%;
+    float: left;
+	text-align: center;
+	background: #545486;
+	color: white;
+	margin-right: 2%;
+	font-size: 11px;
+	padding: 3px 0 1px 0;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+	font-weight: 300;
+}
+
+.top_button_left span{
+	font-size: 23px;
+    font-weight: 300;
+}
+
+.top_button_left:hover{
+	text-decoration: none;
+	color: #fff;
+}
+
+.top_button_right{
+	width: 48%;
+    float: left;
+	text-align: center;
+	background: #545486;
+	color: white;
+	margin-left: 2%;
+	font-size: 11px;
+	padding: 3px 0 1px 0;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+	font-weight: 300;
+}
+
+.top_button_right span{
+	font-size: 23px;
+    font-weight: 300;
+}
+
+.top_button_right:hover{
+	text-decoration: none;
+	color: #fff;
+}
+
+.branch_heading{
+	font-size: 22px;
+	color: #fff;
+	float: left;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.active_branch_block{
+	border: 2px solid #02FF00 !important;
+}
+
+.branch_block1{
+	width: 32%;
+	float: left;
+	border: 2px solid #fff;
+	background-image: url(./assets/images/hotel-entry@2x.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
+	height: 132px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+.branch_block2{
+	width: 32%;
+	float: left;
+	border: 2px solid #fff;
+	background-image: url(./assets/images/hotel-presidente-4s@2x.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 2%;
+	cursor: pointer;
+	height: 132px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+.branch_block3{
+	width: 32%;
+	float: left;
+	border: 2px solid #fff;
+	background-image: url(./assets/images/royal-executive-zoom@2x.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
+	height: 132px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+.branch_block_btm{
+	width: 100%;
+    float: left;
+	background: #0000007a;
+	margin-top: 74px;
+}
+
+.branch_block_btm p{ 
+    color: #fff;
+    font-size: 10px;
+    margin-bottom: 0;
+    font-weight: 200;
+    padding-left: 5px;
+    width: 85%;
+    float: left;
+}
+
+.branch_block_btm img{ 
+    background: #00000085;
+	padding: 5px;
+	margin-top: 4px;
+}
+
+.branch_block-top{
+	width: 100%;
+	float: left;
+	visibility: hidden;
+}
+
+.br_top_first_img{
+	width: 14%;
+    float: left;
+    background: #008AC5;
+	padding: 5px;
+	margin-left: -35px;
+}
+
+.br_top_secont_imgclm{
+	width: 22%;
+	float: right;
+	margin-right: -60px;
+}
+
+.br_top_second_img{
+	background: #FFBB00;
+    padding: 4px;
+    float: left;
+    margin-right: 7px;
+}
+
+.br_top_third_img{
+	background: #FF0000;
+    padding: 4px 5px 3px 5px;
+    float: left;
+}
+
+.branch_block1:hover .branch_block-top{
+	visibility: visible;
+	transition: all .3s ease 0s;
+}
+
+.branch_block1:hover .br_top_secont_imgclm{
+	margin-right: 0;
+	transition: all .3s ease 0s;
+}
+
+.branch_block1:hover .br_top_first_img{
+	margin-left: 0;
+	transition: all .3s ease 0s;
+}
+
+.branch_block2:hover .br_top_secont_imgclm{
+	margin-right: 0;
+	transition: all .3s ease 0s;
+}
+
+.branch_block2:hover .br_top_first_img{
+	margin-left: 0;
+	transition: all .3s ease 0s;
+}
+
+.branch_block3:hover .br_top_secont_imgclm{
+	margin-right: 0;
+	transition: all .3s ease 0s;
+}
+
+.branch_block3:hover .br_top_first_img{
+	margin-left: 0;
+	transition: all .3s ease 0s;
+}
+
+.branch_block2:hover .branch_block-top{
+	visibility: visible;
+	transition: all .3s ease 0s;
+}
+
+.branch_block3:hover .branch_block-top{
+	visibility: visible;
+	transition: all .3s ease 0s;
+}
+
+.pagination_btm{
+	width: 100%;
+	float: left;
+	margin-top: 15px;
+}
+
+.right_side_table{
+	width: 100%;
+	float: left;
+	background: #fff;
+    padding: 1px;
+}
+
+.right_side_table h6{
+	width: 100%;
+    float: left;
+    text-align: center;
+    color: #fff;
+    background: #53659A;
+    padding: 4px 0;
+    font-size: 13px;
+}
+
+.right_side_table_box{
+	width: 100%;
+	float: left;
+}
+
+.right_side_table_box tr{
+	border-bottom: 1px solid #00000030;
+}
+
+.right_side_table_box tr:first-child th{
+	font-size: 9px;
+    text-align: center;
+	font-weight: 600;
+	padding: 8px 0;
+}
+
+.right_side_table_box tr th{
+	font-size: 10px;
+    text-align: center;
+	font-weight: 300;
+	padding: 8px 0;
+}
+
+
+.page-link{
+	background-color: inherit !important;
+	border: inherit !important;
+	color: #fff !important;
+}
+
+.pagination li a{
+	padding: 5px 13px !important;
+    font-size: 14px;
+}
+
+.pagination li:nth-child(2) a{
+	background: #fff !important;
+	color: #000 !important;
+	border-radius: 40px;
+    padding: 5px 12px !important;
+}
+
+/*_________________________________________________page 1 Branches css end________________________________________________*/
+/*_________________________________________________page 1 Branches css end________________________________________________*/
+
+
+
+
+
+
+/*_________________________________________________page 3 recordings css____________________________________________________*/
+/*_________________________________________________page 3 recordings css____________________________________________________*/
+.full_table{
+	width: 100%;
+	float: left;
+	background: #222222;
+    margin-bottom: 20px;
+}
+
+
+.full_table_box{
+	width: 100%;
+	float: left;
+}
+
+.full_table_box tr{
+	border-bottom: 1px solid #ffffff0f;
+}
+
+.full_table_box tr:first-child th{
+	font-size: 9px;
+    text-align: center;
+	font-weight: 600;
+	padding: 14px 0;
+	color: #fff;
+}
+
+.full_table_box tr th{
+	font-size: 10px;
+    text-align: center;
+	font-weight: 300;
+	padding: 14px 0;
+	color:#ffffffbd;
+}
+
+.edit_dlt_btn{
+	border: none;
+	background: no-repeat;
+	opacity: 0.8;
+}
+
+.theme_checkbox_label17 {
+	height: 15px !important;
+	width: 15px !important;
+	line-height: 20px;
+	text-align: center;
+	border: 1px solid #fff;
+	border-radius: 50px;
+}
+.lable_16_1 {
+	width: 55%;
+	float: left;
+	margin: 0;
+	font-size: 12px;
+	font-weight: 650;
+	color: #918a8a;
+	margin-top: 4px;
+	margin-left: 5%;
+}
+.theme_checkbox_input17 {
+	display: none;
+}
+
+.theme_checkbox_input17:checked ~ .theme_checkbox_label17 .tick17 {
+	display: block;
+}
+
+.theme_checkbox_input17:checked ~ .theme_checkbox_label17 {
+	border: none;
+}
+
+.theme_checkbox_label17 .tick17 {
+	display: none;
+	padding: 3px 2px;
+	color: #fff;
+	background: #00CCF2;
+	border-radius: 50px;
+	font-size: 9px;
+}
+
+.full_table_top_p{
+	width: 100%;
+	float: left;
+	margin-bottom: 0;
+	padding: 30px 0;
+	text-align: right;
+}
+
+.full_table_top_p a{
+	background: #00CCF2;
+    border-radius: 20px;
+    color: #fff;
+    padding: 6px 20px;
+    font-size: 11px;
+    margin-right: 19px;
+}
+
+.full_table_top_p a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.colmn_chart_text2 code{
+	background-color: inherit;
+	padding: inherit;
+	font-size: inherit;
+	padding-left: 0;
+}
+
+.click_here{
+	color: #fff;
+}
+
+.click_here:hover{
+	color: #fff;
+	text-decoration: none;
+}
+/*_________________________________________________page 3 recordings css end________________________________________________*/
+/*_________________________________________________page 3 recordings css end________________________________________________*/
+
+
+
+
+
+
+
+/*_________________________________________________page 6 add new employee css____________________________________________________*/
+/*_________________________________________________page 6 add new employee css____________________________________________________*/
+.add_new_employee_colmn{
+	width: 100%;
+	float: left;
+	padding: 35px 28px;
+	background: #222222;
+}
+
+.form_addnew_employee{
+	width: 84%;
+	float: left;
+}
+
+.addnew_employee_btns{
+	width: 100%;
+	float: left;
+	padding: 30px 18px;
+	text-align: center;
+}
+
+.adddnew_btns{
+	width: 92px;
+    padding: 6px 0;
+    font-size: 14px;
+    background: #00CCF2;
+    border: none;
+	color: #fff;
+	text-align: center;
+}
+
+.addnew_employe_lbl{
+	width: 20%;
+	float: left;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 200;
+	padding-top: 4px;
+	margin-bottom: 0;
+}
+
+.addnew_employe_input{
+	width: 80%;
+    float: left;
+    background: no-repeat;
+	border: 0.5px solid #ffffff4f;
+	margin-bottom: 35px;
+	color: white;
+    padding-left: 8px;
+}
+
+.addnew_employe_input input{
+	height: 34px;
+}
+/*_________________________________________________page 6 add new employee css end________________________________________________*/
+/*_________________________________________________page 6 add new employee css end________________________________________________*/
+
+
+
+/*_________________________________________________tags input css________________________________________________*/
+/*_________________________________________________tags input css________________________________________________*/
+.simple-tags {
+	box-sizing: border-box;
+	padding: 0em 0.5em;
+	display: -webkit-box;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 14px;
+	height: 85px;
+}
+
+.simple-tags > ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: -webkit-box;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.simple-tags ul li {
+	margin: 0.5em 0.2em;
+	padding: 2px 3px;
+	color: #484646;
+	background-color: #fff;
+	border-radius: 5px;
+	font-size: 12px;
+	height: 22px;
+}
+
+.simple-tags ul li a {
+	margin: 0.5em 0.2em;
+	text-decoration: none;
+	color: inherit; 
+}
+
+.simple-tags input {
+	padding: 0.9em 0.5em;
+	box-sizing: border-box;
+	-webkit-box-flex: 1;
+	flex-grow: 1;
+	border: none;
+	outline: none;
+	font-size: inherit;
+	font-family: inherit;
+	background: none;
+	color: #fff; 
+}
+/*_________________________________________________tags input css end________________________________________________*/
+/*_________________________________________________tags input css end________________________________________________*/
+
+
+
+
+/*_________________________________________________dognut pie chart css________________________________________________*/
+/*_________________________________________________dognut pie chart css________________________________________________*/
+#donutchart rect{
+	fill: #222;
+}
+
+
+#donutchart text{
+	display: none;
+}
+
+#donutchart text:nth-child(1){
+	display: block;
+	fill: #fff;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.free_space{
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12px;
+    font-weight: 300;
+	letter-spacing: 1px;
+	text-align: center;
+	z-index: 9999999;
+	position: absolute;
+    top: 5px;
+    left: 88px;
+}
+
+#donutchart g:nth-child(3){
+	display: none;
+}
+
+#donutchart g:nth-child(1){
+	position: relative;
+	left: 40px;
+}
+
+
+#donutchart g:nth-child(4) path{
+	fill: #FF5E8C;
+}
+
+#donutchart g:nth-child(5) path{
+	fill: #55C9C2;
+}
+
+#donutchart g:nth-child(6) path{
+	fill: #B8D60B;
+}
+
+#donutchart g:nth-child(7) path{
+	fill: #FFC70D;
+}
+
+#donutchart g:nth-child(8) path{
+	fill: #FF8A0D;
+}
+
+#donutchart g path{
+	stroke: #222;
+}
+
+#donutchart svg g circle:nth-child(4){
+	fill: #FF5E8C;
+}
+
+.piechart_text{
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+	position: absolute;
+	z-index: 99;
+	float: right;
+	left: 160px;
+	top: 29px;
+	font-size: 8px;
+	display: flex;
+	font-weight: 400;
+}
+
+.piechart_text span{
+	padding: 6px 0px;
+    margin-right: 10px;
+}
+
+.piechart_text span code{ 
+	background: #ff5e8c;
+    padding: 1px 4px 1px 4px;
+    height: 2px;
+    width: 7px;
+    display: block;
+    border-radius: 9px;
+}
+
+
+.piechart_text2{
+	top: 44px;
+}
+
+.piechart_text2 span code{
+	background: #55c9c2;
+}
+
+.piechart_text3{
+	top: 60px;
+}
+
+.piechart_text3 span code{
+	background: #ff8a0d;
+}
+
+.piechart_text4{
+	top: 77px;
+}
+
+.piechart_text4 span code{
+	background: #ffc70d;
+}
+
+.piechart_text5{
+	top: 95px;
+}
+
+.piechart_text5 span code{
+	background: #b8d60b;
+}
+
+.piechart_text6{
+	top: 10px;
+}
+
+.piechart_text7{
+	top: 25px;
+}
+
+.piechart_text8{
+	top: 42px;
+}
+
+.piechart_text9{
+	top: 58px;
+}
+
+.piechart_text10{
+	top: 75px;
+}
+/*_________________________________________________dognut pie chart css end______________________________________________*/
+/*_________________________________________________dognut pie chart css end______________________________________________*/
+
+
+/*_________________________________________________progress circle css__________________________________________________*/
+/*_________________________________________________progress circle css__________________________________________________*/
+.progress_circle_1{
+	width: 48%;
+	float: left;
+	margin-right: 2%;
+	background: #222;
+	margin-top: 20px;
+	padding-bottom: 10px;
+}
+
+.progress_circle_2{
+	width: 48%;
+	float: left;
+	margin-left: 2%;
+	background: #222;
+	margin-top: 20px;
+	padding-bottom: 10px;
+}
+
+.progress{
+	height: none;
+}
+
+.player {
+    width: 100px;
+    height: 100px;
+    background: #455060;
+    position: relative;
+    border-radius: 50%;
+    overflow: visible;
+    margin: 9px auto;
+}
+
+.player2 {
+    width: 100px;
+    height: 100px;
+    background: #455060;
+    position: relative;
+    border-radius: 50%;
+    overflow: visible;
+    margin: 8px auto;
+}
+
+
+.left-side {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 50%;    
+    border: 9px solid #455060;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(45deg);
+}
+
+.left-side.fill {
+    border-color: transparent;
+    border-left-color: #00CCF2;
+    border-bottom-color: #00CCF2;
+}
+
+.right-side {
+    transform: rotate(45deg);
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 50%;    
+    border: 9px solid #00CCF2;
+    border-left-color: #455060;
+    border-bottom-color: #455060;
+}
+
+.player-text {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	color: #00CCF2;
+	font-weight: 700;
+	font-size: 15px;
+}
+
+.player-title {
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 500;
+	margin-top: 4px;
+}
+/*_________________________________________________progress circle css end__________________________________________________*/
+/*_________________________________________________progress circle css end__________________________________________________*/
+  
+
+
+
+
+/*_________________________________________________column chart css__________________________________________________*/
+/*_________________________________________________column chart css__________________________________________________*/
+.colmn_chart_heading{
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-align: left;
+	width: 100%;
+	float: left;
+	background: #222;
+	padding: 10px 10px 10px 12px;
+	margin-bottom: 0;
+}
+
+.colmn_chart_text{
+	width: 100%;
+	float: left;
+	background: #222;
+	margin: 0;
+	color: #fff;
+	padding-left: 12px;
+	font-size: 10px;
+	font-weight: 200;
+}
+
+.colmn_chart_text code{
+	color:#fff;
+	float: left;
+	margin-right: 8px;
+	background: inherit;
+    padding: 0;
+}
+
+
+.colmn_chart_text span:nth-child(1){
+	background: #00CCF2;
+	padding: 4px;
+	border-radius: 50%;
+	line-height: 9px;
+	width: 5px;
+	float: left;
+	vertical-align: inherit;
+	margin-top: 3px;
+	margin-right: 4px;
+}
+
+.colmn_chart_text span:nth-child(3){
+	background: #FFEFBB;
+	padding: 4px;
+	border-radius: 50%;
+	line-height: 9px;
+	width: 5px;
+	float: left;
+	vertical-align: inherit;
+	margin-top: 3px;
+	margin-right: 4px;
+}
+
+.colmn_chart_text span:nth-child(5){
+	background: #AACAAE;
+	padding: 4px;
+	border-radius: 50%;
+	line-height: 9px;
+	width: 5px;
+	float: left;
+	vertical-align: inherit;
+	margin-top: 3px;
+	margin-right: 4px;
+}
+
+.colmn_chart_text span:nth-child(7){
+	background: #95F5E8;
+	padding: 4px;
+	border-radius: 50%;
+	line-height: 9px;
+	width: 5px;
+	float: left;
+	vertical-align: inherit;
+	margin-top: 3px;
+	margin-right: 4px;
+}
+
+.colmn_chart_text span:nth-child(9){
+	background: #DD6F00;
+	padding: 4px;
+	border-radius: 50%;
+	line-height: 9px;
+	width: 5px;
+	float: left;
+	vertical-align: inherit;
+	margin-top: 3px;
+	margin-right: 4px;
+}
+
+#chart_div rect:nth-child(2) {
+    fill:#222;
+}
+
+#chart_div svg g:nth-child(4) g path{
+    stroke-width: 0px;
+}
+
+#chart_div svg g:nth-child(3) rect{
+    display: none;
+}
+
+#chart_div svg g:nth-child(3) path{
+    display: none;
+}
+
+#chart_div svg g:nth-child(4) rect:nth-child(16){
+	width: 5px;
+	fill: #00ccf2
+}
+
+#chart_div svg g:nth-child(4) rect:nth-child(17){
+	width: 5px;
+	fill: #ffefbb
+}
+
+#chart_div svg g:nth-child(4) rect:nth-child(18){
+	width: 5px;
+	fill: #AACAAE
+}
+
+#chart_div svg g:nth-child(4) rect:nth-child(19){
+	width: 5px;
+	fill: #95F5E8
+}
+
+#chart_div svg g:nth-child(4) rect:nth-child(20){
+	width: 5px;
+	fill: #DD6F00
+}
+
+#chart_div svg text{
+	font-size: 8px;
+	fill:#fff;
+}
+
+#chart_div g:nth-child(4) rect:nth-child(30){
+    fill: #fff;
+    width: 6px;
+}
+/*_________________________________________________column chart css end__________________________________________________*/
+/*_________________________________________________column chart css end__________________________________________________*/
