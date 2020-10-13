@@ -28,7 +28,10 @@
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "tui-calendar": "^1.12.14",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1001.6",
