@@ -1,25 +1,25 @@
 <div class="left_side_bar">
-    <a href="#" class="top_button_left">
+    <a routerLink="/online" class="top_button_left">
         Online<br>
         <span>60</span>
     </a>
 
-    <a href="#" class="top_button_right">
+    <a routerLink="/offline" class="top_button_right">
         Offline<br>
         <span>45</span>
     </a>
 
-    <a href="recordings.html" class="top_button_left" style="background: #53659A;">
+    <a routerLink="/recordings" class="top_button_left" style="background: #53659A;">
         Recordings<br>
         <span>122</span>
     </a>
 
-    <a href="#" class="top_button_right" style="background: #6788AB;">
+    <a routerLink="/branches" class="top_button_right" style="background: #6788AB;">
         Total Branches<br>
         <span>200</span>
     </a>
 
-    <a href="employees.html" class="top_button_left" style="background: #6788AB;">
+    <a routerLink="/employees" class="top_button_left" style="background: #6788AB;">
         Total Employees<br>
         <span>110</span>
     </a>
@@ -29,7 +29,7 @@
         <span>55</span>
     </a>
 
-    <a href="notification.html" class="top_button_left" style="background: #6788AB;">
+    <a routerLink="/notifications" class="top_button_left" style="background: #6788AB;">
         Notifications<br>
         <span>110</span>
     </a>
@@ -40,27 +40,23 @@
     </a>
 
     <div class="col-md-12 p-0 float-left">
-        <!-- <p class="piechart_text"><span><code></code></span>E-400 GB</p>
-        <p class="piechart_text piechart_text2"><span><code></code></span>E-400 GB</p>
-        <p class="piechart_text piechart_text3"><span><code></code></span>E-400 GB</p>
-        <p class="piechart_text piechart_text4"><span><code></code></span>E-400 GB</p>
-        <p class="piechart_text piechart_text5"><span><code></code></span>E-400 GB</p>
-        <div id="donutchart" style="width: 250px; height: 140px;">
-            
-        </div> -->
-        <app-bar-chart chartType="doughnut"></app-bar-chart>
-
+        <app-chart chartType="doughnut"></app-chart>
     </div>
 
 
     <div class="col-md-12 p-0 float-left mt-3">
-        <h6 class="colmn_chart_heading">Device Type</h6>
-        <p class="colmn_chart_text"><span></span> <code>Android</code> <span></span><code>Chrome</code>
-            <span></span><code>Opera</code> <span></span><code>Media Player</code> <span></span><code>Roku</code></p>
-         <app-bar-chart chartType="bar"></app-bar-chart>
+        <!-- <h6 class="colmn_chart_heading">Device Type</h6> -->
+
+           <app-chart chartType="bar"></app-chart>
 
     </div>
 
 </div>
 
-<app-branches></app-branches>
+<div class="right_full_bar">
+    <div class="full_table">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<!-- <app-branches></app-branches> -->

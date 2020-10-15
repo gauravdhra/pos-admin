@@ -1,0 +1,28 @@
+::ng-deep{
+    .fc-view-harness{
+        //  height: 430px!important;
+        background: #ffff;
+
+    }
+}
+
+:host ::ng-deep{
+  .fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 21px;
+
+    }
+  .fc-header-toolbar {
+      .fc-today-button {
+    font-size: 1vw;
+    padding:2px
+    // display: none;
+    }
+    .fc-toolbar-chunk{
+        display : flex;
+        .fc-toolbar-title{
+                font-size: 1.50em;
+                color: #fff;
+        }
+    }
+}
+}

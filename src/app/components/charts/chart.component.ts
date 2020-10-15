@@ -4,11 +4,11 @@ interface Book {
   author: string;
 }
 @Component({
-  selector: 'app-bar-chart',
-  templateUrl: './bar-chart.component.html',
-  styleUrls: ['./bar-chart.component.scss']
+  selector: 'app-chart',
+  templateUrl: './chart.component.html',
+  styleUrls: ['./chart.component.scss']
 })
-export class BarChartComponent implements OnInit {
+export class ChartComponent implements OnInit {
   @Input() chartType: string;
   employeeOrgData; orgCount1;
   orgCount2; orgCount3; orgCount4; orgCount5; employeeLabel: any;
