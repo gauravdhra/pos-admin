@@ -7,6 +7,18 @@
 }
 
 :host ::ng-deep{
+  .fc-col-header{
+    width:100%!important
+  }
+  .fc-scrollgrid-sync-table{
+    
+    width:100%!important
+
+  }
+  .fc-daygrid-body{
+    width:100%!important
+
+  }
   .fc .fc-toolbar.fc-header-toolbar {
     margin-bottom: 21px;
 
