@@ -32,6 +32,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarNotificationComponent } from './components/calendar-notification/calendar-notification.component';
+import { DatePipe } from '@angular/common';
+import { CheckboxModule } from 'primeng/checkbox';
 
 
 FullCalendarModule.registerPlugins([
@@ -69,9 +71,10 @@ FullCalendarModule.registerPlugins([
     ToastModule,
     InputTextModule,
     ProgressBarModule,
-    DropdownModule
+    DropdownModule,
+    CheckboxModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

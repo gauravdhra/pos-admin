@@ -10,10 +10,11 @@ export interface Representative {
 
 export interface Recording {
     id?: number;
-    name?: number;
-    country?: Country;
-    company?: string;
-    date?: string;
-    status?: string;
-    representative?: Representative;
+    company_name?: string;
+    created_at?: string;
+    path?: string;
+    duration?: string;
+    end_time?: string;
+    start_time?: string;
+    type?: string;
 }
