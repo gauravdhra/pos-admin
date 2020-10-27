@@ -15,6 +15,12 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { ChartModule } from 'primeng/chart';
 import { PanelModule } from 'primeng/panel';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+
+
+
 import { ChartComponent } from './components/charts/chart.component';
 import { RecordingsComponent } from './components/recordings/recordings.component';
 import { OnlineUsersComponent } from './components/online-users/online-users.component';
@@ -34,6 +40,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CalendarNotificationComponent } from './components/calendar-notification/calendar-notification.component';
 import { DatePipe } from '@angular/common';
 import { CheckboxModule } from 'primeng/checkbox';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './home.component';
 
 
 FullCalendarModule.registerPlugins([
@@ -52,6 +60,8 @@ FullCalendarModule.registerPlugins([
     OfflineUsersComponent,
     EmployeesComponent,
     CalendarNotificationComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     HttpClientModule,
@@ -66,6 +76,7 @@ FullCalendarModule.registerPlugins([
     SliderModule,
     DialogModule,
     MultiSelectModule,
+    ReactiveFormsModule,
     ContextMenuModule,
     ButtonModule,
     ToastModule,

@@ -69,7 +69,7 @@
         <tr class="p-selectable-row">
             <td>
                 <!-- <p-checkbox  [disabled]="selectedVideos.length == 2" [value]="recording" (onChange)="selectVideo(recording)" ></p-checkbox> -->
-                <p-checkbox [disabled]="selectedVideos.length == 2"  [(ngModel)]="selectedValues" [value]="recording" (onChange)="selectVideo(recording,$event,i)" ></p-checkbox>
+                <p-checkbox [disabled]="selectedVideos.length == 2 && selectedVideos.indexOf(recording) == -1"  [value]="selectedVideos" (onChange)="selectVideo(recording,$event)" ></p-checkbox>
             </td>
             <td>
                 <span class="p-column-title">Recordings</span>
@@ -93,7 +93,7 @@
             </td> -->
             <td>
                 <span class="p-column-title" >Play</span>
-                <i class="pi pi-caret-right"  (click)="playVideo(recording)"></i>
+                <i class="pi pi-caret-right" *ngIf="selectedVideos.length == 2 && selectedVideos.indexOf(recording) > -1" (click)="playVideo(recording)"></i>
                 <!-- <p-progressBar [value]="recording.type" [showValue]="false"></p-progressBar> -->
             </td>
             <td style="text-align: center">
@@ -114,8 +114,8 @@
 <p-dialog header="Monitor" [(visible)]="playerDialog" [modal]="false" [style]="{width: '50vw'}"
     [maximizable]="true" [baseZIndex]="0" [draggable]="true" [resizable]="true">
     <div>
-        <video style="width:50%" autoplay controls [src]="'http://92.253.126.199:5000'+selectVideo[0]"></video>
-        <video style="width:50%" autoplay controls  [src]="'http://92.253.126.199:5000'+selectVideo[1]"></video>
+        <video style="width:50%" autoplay controls [src]="'http://92.253.126.199:5000'+selectedVideos[0]?.path"></video>
+        <video style="width:50%" autoplay controls [src]="'http://92.253.126.199:5000'+selectedVideos[1]?.path"></video>
     </div>
     <ng-template pTemplate="footer">
         <p-button icon="pi pi-check" (click)="playerDialog=false" label="Close" styleClass="p-button-text">

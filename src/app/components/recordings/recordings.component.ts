@@ -99,11 +99,15 @@ export class RecordingsComponent implements OnInit {
     if(this.selectedVideos.length == 2)
     this.playerDialog = true;
   }
-  selectVideo(recording,action,index) {
+  selectVideo(recording,action) {
     if (action.checked)
     this.selectedVideos.push(recording);
-    else
+    else{
+      const index = this.selectedVideos.indexOf(recording);
+
       this.selectedVideos.splice(index,1);
+    }
+        
     // if(recording.type="screen")
     //   this.selectedVideos[0] = recording;
     // else
@@ -123,7 +127,6 @@ export class RecordingsComponent implements OnInit {
     }
     month =this.monthNames[month]
     var sdf = day + ' ' + month + ' ' + date.getFullYear();
-    debugger
     // return date.getFullYear() + '-' + month + '-' + day;
     return day + ' ' + month + ' ' + date.getFullYear() ;
   }

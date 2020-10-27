@@ -33,12 +33,16 @@
         Notifications<br>
         <span>110</span>
     </a>
-
-    <a href="#" class="top_button_right" style="background: #6788AB;">
+    
+    <a  class="top_button_right"  style="background: #6788AB;">
         WAN<br>
         <span>0 Kbps</span>
     </a>
-
+    
+    <a  class="top_button_left" (click)="logout()" style="background: #ab676d;color:white;cursor: pointer;">
+        Log out<br>
+        <span><i class="pi pi-sign-out"></i></span>
+    </a>
     <div class="col-md-12 p-0 float-left">
         <app-chart chartType="doughnut"></app-chart>
     </div>
