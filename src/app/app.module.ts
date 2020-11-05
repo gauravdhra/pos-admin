@@ -38,10 +38,12 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarNotificationComponent } from './components/calendar-notification/calendar-notification.component';
-import { DatePipe } from '@angular/common';
+import { DatePipe ,SlicePipe } from '@angular/common';
 import { CheckboxModule } from 'primeng/checkbox';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './home.component';
+import { RegisterComponent } from './components/register/register.component';
+import { PaginatorModule } from 'primeng/paginator';
 
 
 FullCalendarModule.registerPlugins([
@@ -61,7 +63,8 @@ FullCalendarModule.registerPlugins([
     EmployeesComponent,
     CalendarNotificationComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     HttpClientModule,
@@ -83,9 +86,10 @@ FullCalendarModule.registerPlugins([
     InputTextModule,
     ProgressBarModule,
     DropdownModule,
-    CheckboxModule
+    CheckboxModule,
+    PaginatorModule
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, SlicePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

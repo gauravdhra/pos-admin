@@ -3,15 +3,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AuthenticationService } from '../../services';
+import { AuthenticationService, AlertService } from '../../services';
+
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
-export class LoginComponent implements OnInit {
-
-
+export class RegisterComponent implements OnInit {
   form: FormGroup;
   loading = false;
   submitted = false;
@@ -21,13 +20,14 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authService: AuthenticationService,
-    // // private alertService: AlertService
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
+      firstName: ['', Validators.required],
       email: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
@@ -38,24 +38,23 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
 
     // reset alerts on submit
-    // this.alertService.clear();
+    this.alertService.clear();
 
     // stop here if form is invalid
     if (this.form.invalid) {
       return;
     }
-
+    this.alertService.success('Registration successful', { keepAfterRouteChange: true });
     this.loading = true;
-    this.authService.login(this.f.email.value, this.f.password.value)
+    this.authService.register(this.form.value)
       .pipe(first())
       .subscribe({
         next: () => {
-          // get return url from query parameters or default to home page
-          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-          this.router.navigateByUrl(returnUrl);
+          this.alertService.success('Registration successful', { keepAfterRouteChange: true });
+          this.router.navigate(['../login'], { relativeTo: this.route });
         },
         error: error => {
-          // this.alertService.error(error);
+          this.alertService.error(error);
           this.loading = false;
         }
       });

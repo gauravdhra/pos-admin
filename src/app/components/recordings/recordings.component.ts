@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Recording, Representative } from '../../models/recordModel';
-import { RecordService } from '../../services/recordings.service';
+import { RecordService } from '../../services';
 import { Table } from 'primeng/table';
 import { PrimeNGConfig } from 'primeng/api';
 import { environment } from '../../../environments/environment';

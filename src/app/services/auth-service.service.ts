@@ -29,7 +29,8 @@ export class AuthenticationService {
   }
 
   login(email, password) {
-    return this.http.post<User>(`${environment.URL}/login`, { email, password })
+    let role = "admin"
+    return this.http.post<User>(`${environment.URL}/login-admin`, { email, password ,role})
       .pipe(map(user => {
         this.loggedIn.next(true);
         // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -37,6 +38,10 @@ export class AuthenticationService {
         this.userSubject.next(user);
         return user;
       }));
+  }
+
+  register(user: User) {
+    return this.http.post(`${environment.URL}/register`, user);
   }
 
 }

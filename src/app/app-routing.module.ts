@@ -7,8 +7,9 @@ import { LoginComponent } from './components/login/login.component';
 import { OfflineUsersComponent } from './components/offline-users/offline-users.component';
 import { OnlineUsersComponent } from './components/online-users/online-users.component';
 import { RecordingsComponent } from './components/recordings/recordings.component';
+import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './home.component';
-import { AuthAdminGuard } from './services/auth-admin.guard';
+import { AuthAdminGuard } from './services';
 import { SideBarComponent } from './side-bar/side-bar.component';
 
 const routes: Routes = [
@@ -56,6 +57,15 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent   // {5}
+      }
+    ]
+  },
+  {
+    path: '',
+    children: [
+      {
+        path: 'register',
+        component: RegisterComponent   // {5}
       }
     ]
   }

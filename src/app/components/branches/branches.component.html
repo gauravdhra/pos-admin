@@ -1,203 +1,28 @@
 <div class="center_bar">
     <h1 class="branch_heading">Branches</h1>
 
-    <div class="branch_block1 active_branch_block">
+    <div class="branch_block1 active_branch_block"  *ngFor="let branch of branches | slice:start:end ; let i=index">
+
         <div class="branch_block-top">
             <img src="../../../assets/images/rec.svg" class="br_top_first_img" />
-
+            
             <div class="br_top_secont_imgclm">
-                <img src="../../../assets/images/edit.svg" class="br_top_second_img" />
-                <img src="../../../assets/images/dlt.svg" class="br_top_third_img" />
+                <img src="../../../assets/images/edit.svg" (click)="deleteBranch(i)" class="br_top_second_img" />
+                <img src="../../../assets/images/dlt.svg" (click)="deleteBranch(i)" class="br_top_third_img" />
             </div>
         </div>
 
         <div class="branch_block_btm">
-            <p>Branch Name: Gardens ST.<br>Location: Amman</p>
+            <p>Branch Name: {{branch.user_fname}}<br>Location: {{branch.user_id}}</p>
             <a href="#"><img src="../../../assets/images/Icons with numbers (1).svg" /></a>
         </div>
     </div>
-
-    <div class="branch_block2">
-        <div class="branch_block-top">
-            <img src="../../../assets/images/rec.svg" class="br_top_first_img" />
-
-            <div class="br_top_secont_imgclm">
-                <img src="../../../assets/images/edit.svg" class="br_top_second_img" />
-                <img src="../../../assets/images/dlt.svg" class="br_top_third_img" />
-            </div>
-        </div>
-
-        <div class="branch_block_btm">
-            <p>Branch Name: Gardens ST.<br>Location: Amman</p>
-            <a href="#"><img src="../../../assets/images/Icons with numbers (1).svg" /></a>
-        </div>
-    </div>
-
-    <div class="branch_block3 ">
-        <div class="branch_block-top">
-            <img src="../../../assets/images/rec.svg" class="br_top_first_img" />
-
-            <div class="br_top_secont_imgclm">
-                <img src="../../../assets/images/edit.svg" class="br_top_second_img" />
-                <img src="../../../assets/images/dlt.svg" class="br_top_third_img" />
-            </div>
-        </div>
-
-        <div class="branch_block_btm">
-            <p>Branch Name: Gardens ST.<br>Location: Amman</p>
-            <a href="#"><img src="../../../assets/images/Icons with numbers (1).svg" /></a>
-        </div>
-    </div>
-
-    <div class="branch_block1">
-        <div class="branch_block-top">
-            <img src="../../../assets/images/rec.svg" class="br_top_first_img" />
-
-            <div class="br_top_secont_imgclm">
-                <img src="../../../assets/images/edit.svg" class="br_top_second_img" />
-                <img src="../../../assets/images/dlt.svg" class="br_top_third_img" />
-            </div>
-        </div>
-
-        <div class="branch_block_btm">
-            <p>Branch Name: Gardens ST.<br>Location: Amman</p>
-            <a href="#"><img src="../../../assets/images/Icons with numbers (1).svg" /></a>
-        </div>
-    </div>
-
-    <div class="branch_block2">
-        <div class="branch_block-top">
-            <img src="../../../assets/images/rec.svg" class="br_top_first_img" />
-
-            <div class="br_top_secont_imgclm">
-                <img src="../../../assets/images/edit.svg" class="br_top_second_img" />
-                <img src="../../../assets/images/dlt.svg" class="br_top_third_img" />
-            </div>
-        </div>
-
-        <div class="branch_block_btm">
-            <p>Branch Name: Gardens ST.<br>Location: Amman</p>
-            <a href="#"><img src="../../../assets/images/Icons with numbers (1).svg" /></a>
-        </div>
-    </div>
-
-    <div class="branch_block3 ">
-        <div class="branch_block-top">
-            <img src="../../../assets/images/rec.svg" class="br_top_first_img" />
-
-            <div class="br_top_secont_imgclm">
-                <img src="../../../assets/images/edit.svg" class="br_top_second_img" />
-                <img src="../../../assets/images/dlt.svg" class="br_top_third_img" />
-            </div>
-        </div>
-
-        <div class="branch_block_btm">
-            <p>Branch Name: Gardens ST.<br>Location: Amman</p>
-            <a href="#"><img src="../../../assets/images/Icons with numbers (1).svg" /></a>
-        </div>
-    </div>
-
-    <div class="branch_block1">
-        <div class="branch_block-top">
-            <img src="../../../assets/images/rec.svg" class="br_top_first_img" />
-
-            <div class="br_top_secont_imgclm">
-                <img src="../../../assets/images/edit.svg" class="br_top_second_img" />
-                <img src="../../../assets/images/dlt.svg" class="br_top_third_img" />
-            </div>
-        </div>
-
-        <div class="branch_block_btm">
-            <p>Branch Name: Gardens ST.<br>Location: Amman</p>
-            <a href="#"><img src="../../../assets/images/Icons with numbers (1).svg" /></a>
-        </div>
-    </div>
-
-    <div class="branch_block2">
-        <div class="branch_block-top">
-            <img src="../../../assets/images/rec.svg" class="br_top_first_img" />
-
-            <div class="br_top_secont_imgclm">
-                <img src="../../../assets/images/edit.svg" class="br_top_second_img" />
-                <img src="../../../assets/images/dlt.svg" class="br_top_third_img" />
-            </div>
-        </div>
-
-        <div class="branch_block_btm">
-            <p>Branch Name: Gardens ST.<br>Location: Amman</p>
-            <a href="#"><img src="../../../assets/images/Icons with numbers (1).svg" /></a>
-        </div>
-    </div>
-
-    <div class="branch_block3 ">
-        <div class="branch_block-top">
-            <img src="../../../assets/images/rec.svg" class="br_top_first_img" />
-
-            <div class="br_top_secont_imgclm">
-                <img src="../../../assets/images/edit.svg" class="br_top_second_img" />
-                <img src="../../../assets/images/dlt.svg" class="br_top_third_img" />
-            </div>
-        </div>
-
-        <div class="branch_block_btm">
-            <p>Branch Name: Gardens ST.<br>Location: Amman</p>
-            <a href="#"><img src="../../../assets/images/Icons with numbers (1).svg" /></a>
-        </div>
-    </div>
-
-    <div class="branch_block1">
-        <div class="branch_block-top">
-            <img src="../../../assets/images/rec.svg" class="br_top_first_img" />
-
-            <div class="br_top_secont_imgclm">
-                <img src="../../../assets/images/edit.svg" class="br_top_second_img" />
-                <img src="../../../assets/images/dlt.svg" class="br_top_third_img" />
-            </div>
-        </div>
-
-        <div class="branch_block_btm">
-            <p>Branch Name: Gardens ST.<br>Location: Amman</p>
-            <a href="#"><img src="../../../assets/images/Icons with numbers (1).svg" /></a>
-        </div>
-    </div>
-
-    <div class="branch_block2">
-        <div class="branch_block-top">
-            <img src="../../../assets/images/rec.svg" class="br_top_first_img" />
-
-            <div class="br_top_secont_imgclm">
-                <img src="../../../assets/images/edit.svg" class="br_top_second_img" />
-                <img src="../../../assets/images/dlt.svg" class="br_top_third_img" />
-            </div>
-        </div>
-
-        <div class="branch_block_btm">
-            <p>Branch Name: Gardens ST.<br>Location: Amman</p>
-            <a href="#"><img src="../../../assets/images/Icons with numbers (1).svg" /></a>
-        </div>
-    </div>
-
-    <div class="branch_block3 ">
-        <div class="branch_block-top">
-            <img src="../../../assets/images/rec.svg" class="br_top_first_img" />
-
-            <div class="br_top_secont_imgclm">
-                <img src="../../../assets/images/edit.svg" class="br_top_second_img" />
-                <img src="../../../assets/images/dlt.svg" class="br_top_third_img" />
-            </div>
-        </div>
-
-        <div class="branch_block_btm">
-            <p>Branch Name: Gardens ST.<br>Location: Amman</p>
-            <a href="#"><img src="../../../assets/images/Icons with numbers (1).svg" /></a>
-        </div>
-    </div>
-
-
 
     <div class="pagination_btm">
-        <nav aria-label="Page navigation example" class="float-right">
-            <ul class="pagination">
+        <nav aria-label="Page navigation example" class="">
+            <p-paginator [rows]="rows" [totalRecords]="branches?.length" (onPageChange)="paginate($event)"></p-paginator>
+
+            <!-- <ul class="pagination">
                 <li class="page-item">
                     <a class="page-link" href="#" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
@@ -215,9 +40,10 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </li>
-            </ul>
+            </ul> -->
         </nav>
     </div>
+    
 
 </div>
 <div class="right_side_bar">
@@ -230,3 +56,11 @@
         <!-- <div id="calendar"></div> -->
         <app-calendar-notification ></app-calendar-notification>    </div>
 </div>
+
+
+<p-dialog header="Delete"  [draggable]="false" [resizable]="false" [(visible)]="showConfirmation" [style]="{width: '50vw'}" [baseZIndex]="10000">
+    <h5>Are you sure you want to delete ?</h5>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="confirmDelete()" label="Yes" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>
