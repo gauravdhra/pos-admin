@@ -4,14 +4,14 @@ import { RecordService } from '../../services';
 import { Table } from 'primeng/table';
 import { PrimeNGConfig } from 'primeng/api';
 import { environment } from '../../../environments/environment';
-
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-recordings',
-  templateUrl: './recordings.component.html',
-  styleUrls: ['./recordings.component.scss']
+  selector: 'app-branch-videos',
+  templateUrl: './branch-videos.component.html',
+  styleUrls: ['./branch-videos.component.scss']
 })
-export class RecordingsComponent implements OnInit {
+export class BranchVideosComponent implements OnInit {
   @ViewChild('firstVideoPlayer') firstVideoPlayer: ElementRef;
   @ViewChild('secondVideoPlayer') secondVideoPlayer: ElementRef;
 
@@ -19,7 +19,7 @@ export class RecordingsComponent implements OnInit {
   recordings: Recording[];
   baseUrl = environment.URL
   selectedVideos = new Array<Recording>();
-
+  branchID:number
   selectedCustomers: Recording[];
 
   representatives: Representative[];
@@ -38,10 +38,12 @@ export class RecordingsComponent implements OnInit {
 
   @ViewChild('dt') table: Table;
 
-  constructor(private recordService: RecordService, private primengConfig: PrimeNGConfig) { }
+  constructor(private actRoute: ActivatedRoute,private recordService: RecordService, private primengConfig: PrimeNGConfig) {
+    this.branchID = this.actRoute.snapshot.params.id
+   }
 
   ngOnInit(): void {
-    this.loadRecordings();
+    this.loadRecordings(this.branchID);
     this.monthNames = ["Jan", "Feb", "Mar", "Apr",
       "May", "Jun", "Jul", "Aug",
       "Sep", "Oct", "Nov", "Dec"];
@@ -69,9 +71,9 @@ export class RecordingsComponent implements OnInit {
     ]
     this.primengConfig.ripple = true;
   }
-  loadRecordings(){
+  loadRecordings(branch_id) {
 
-    this.recordService.getAll().then(recordings => {
+    this.recordService.getAllByID(branch_id).then(recordings => {
       this.recordings = recordings;
       this.loading = false;
     });
@@ -112,21 +114,21 @@ export class RecordingsComponent implements OnInit {
     this.firstVideoPlayer.nativeElement.currentTime = 0
     this.secondVideoPlayer.nativeElement.currentTime  = 0
   }
-  play(){
+  play() {
     this.isPlaying = true
     this.firstVideoPlayer.nativeElement.play();
     this.secondVideoPlayer.nativeElement.play();
   }
-  pause(){
+  pause() {
     this.isPlaying = false
     this.firstVideoPlayer.nativeElement.pause();
     this.secondVideoPlayer.nativeElement.pause();
   }
-  forward(){
+  forward() {
     this.firstVideoPlayer.nativeElement.currentTime = this.firstVideoPlayer.nativeElement.currentTime + 10
     this.secondVideoPlayer.nativeElement.currentTime = this.secondVideoPlayer.nativeElement.currentTime + 10
   }
-  backward(){
+  backward() {
     this.firstVideoPlayer.nativeElement.currentTime = this.firstVideoPlayer.nativeElement.currentTime - 10
     this.secondVideoPlayer.nativeElement.currentTime = this.secondVideoPlayer.nativeElement.currentTime - 10
   }
@@ -136,19 +138,19 @@ export class RecordingsComponent implements OnInit {
   onSecondTimeUpdate(event){
     // this.videoCurrentTime = this.secondVideoPlayer.nativeElement.currentTime
   }
-  setCurrentTime(event) {
+  setCurrentTime(event){
     this.firstVideoPlayer.nativeElement.currentTime = event.value
     this.secondVideoPlayer.nativeElement.currentTime = event.value
   }
-  selectVideo(recording,action) {
+  selectVideo(recording, action) {
     if (action.checked)
-    this.selectedVideos.push(recording);
-    else{
+      this.selectedVideos.push(recording);
+    else {
       const index = this.selectedVideos.indexOf(recording);
 
-      this.selectedVideos.splice(index,1);
+      this.selectedVideos.splice(index, 1);
     }
-        
+
     // if(recording.type="screen")
     //   this.selectedVideos[0] = recording;
     // else
@@ -166,10 +168,10 @@ export class RecordingsComponent implements OnInit {
     if (day < 10) {
       day = '0' + day;
     }
-    month =this.monthNames[month]
+    month = this.monthNames[month]
     var sdf = day + ' ' + month + ' ' + date.getFullYear();
     // return date.getFullYear() + '-' + month + '-' + day;
-    return day + ' ' + month + ' ' + date.getFullYear() ;
+    return day + ' ' + month + ' ' + date.getFullYear();
   }
 
   onRepresentativeChange(event) {

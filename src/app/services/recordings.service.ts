@@ -18,7 +18,12 @@ export class RecordService {
             .then(res => <Recording[]>res.data)
             .then(data => { return data; });
     }
-
+    getAllByID(id) {
+        return this.http.get<any>(`${baseUrl}/recordings/${id}`)
+            .toPromise()
+            .then(res => <Recording[]>res.data)
+            .then(data => { return data; });
+    }
 
     // getAll(): Observable<any> {
     //     return this.http.get(`${baseUrl}/recordings`);

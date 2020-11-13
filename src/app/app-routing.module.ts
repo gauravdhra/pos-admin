@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BranchVideosComponent } from './components/branch-videos/branch-videos.component';
 import { BranchesComponent } from './components/branches/branches.component';
 import { CalendarNotificationComponent } from './components/calendar-notification/calendar-notification.component';
 import { EmployeesComponent } from './components/employees/employees.component';
@@ -28,6 +29,11 @@ const routes: Routes = [
         path: 'branches',
         // canActivate  : [AuthGuardUtil],
         component: BranchesComponent,
+      },
+      {
+        path: 'branch-videos/:id',
+        // canActivate  : [AuthGuardUtil],
+        component: BranchVideosComponent,
       },
       {
         path: 'online',

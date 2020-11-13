@@ -1,19 +1,18 @@
 <div class="center_bar">
     <h1 class="branch_heading">Branches</h1>
 
-    <div class="branch_block1 active_branch_block"  *ngFor="let branch of branches | slice:start:end ; let i=index">
-
+    <div [style.background-image]="(branch.user_photo != undefined && branch.user_photo != '') ? 'url('+baseUrl+branch.user_photo+')' : 'url('+'./assets/images/demo-upload.png'+')'"  *ngFor="let branch of branches | slice:start:end ; let i=index" class="branch_block1 active_branch_block"  >
         <div class="branch_block-top">
-            <img src="../../../assets/images/rec.svg" class="br_top_first_img" />
+            <img [routerLink]="['/branch-videos/', branch.user_id]" src="../../../assets/images/rec.svg" class="br_top_first_img" />
             
             <div class="br_top_secont_imgclm">
-                <img src="../../../assets/images/edit.svg" (click)="deleteBranch(i)" class="br_top_second_img" />
+                <img src="../../../assets/images/edit.svg" (click)="editUser(i)" class="br_top_second_img" />
                 <img src="../../../assets/images/dlt.svg" (click)="deleteBranch(i)" class="br_top_third_img" />
             </div>
         </div>
 
         <div class="branch_block_btm">
-            <p>Branch Name: {{branch.user_fname}}<br>Location: {{branch.user_id}}</p>
+            <p>Branch Name: {{branch.user_fname}}<br>ID: {{branch.user_id}}</p>
             <a href="#"><img src="../../../assets/images/Icons with numbers (1).svg" /></a>
         </div>
     </div>
@@ -62,5 +61,95 @@
     <h5>Are you sure you want to delete ?</h5>
     <ng-template pTemplate="footer">
         <p-button icon="pi pi-check" (click)="confirmDelete()" label="Yes" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>
+
+
+
+<p-dialog header="Edit Sale User" [(visible)]="edit" [modal]="false" [style]="{width: '50vw'}" [maximizable]="true"
+    [baseZIndex]="0" [draggable]="false" [resizable]="true">
+
+
+    <div class="card">
+        <h4 class="card-header">Edit Sale User</h4>
+        <div class="card-body">
+            <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+                <img width="100%" [src]="imageUrl || 'assets/images/demo-upload.png'" alt="PHOTO" class="imageUpload">
+
+                <div class="form-group">
+
+                    <!-- <input type="file" class="custom-file-input" id="customFile" name="uploadedImage" (change)="onFileSelect($event)"
+                        #UploadFileInput>
+                    
+                    <label class="custom-file-label" for="customFile">{{fileInputLabel || 'Choose File'}}</label>
+ -->
+
+
+                    <label for="uploadedImage">Select Photo</label>
+                    <input type="file" name="uploadedImage" class="form-control" (change)="onFileSelect($event)"
+                        #UploadFileInput [ngClass]="{ 'is-invalid': submitted && f.uploadedImage.errors }" />
+                    <div *ngIf="submitted && f.uploadedImage.errors" class="invalid-feedback">
+                        <div *ngIf="f.uploadedImage.errors.required">Image is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" formControlName="firstName" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                    </div>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="email" formControlName="lastName" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                    </div>
+                </div> -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" formControlName="email" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Update
+                    </button>
+                    <a routerLink="../login" class="btn btn-link">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="edit=false" label="Close" styleClass="p-button-text">
+        </p-button>
     </ng-template>
 </p-dialog>

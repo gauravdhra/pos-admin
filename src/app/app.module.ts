@@ -44,6 +44,8 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PaginatorModule } from 'primeng/paginator';
+import { BranchVideosComponent } from './components/branch-videos/branch-videos.component';
+import { EmployeeVideosComponent } from './components/employee-videos/employee-videos.component';
 
 
 FullCalendarModule.registerPlugins([
@@ -64,7 +66,9 @@ FullCalendarModule.registerPlugins([
     CalendarNotificationComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    BranchVideosComponent,
+    EmployeeVideosComponent
   ],
   imports: [
     HttpClientModule,

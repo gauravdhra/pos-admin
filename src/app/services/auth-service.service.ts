@@ -40,7 +40,7 @@ export class AuthenticationService {
       }));
   }
 
-  register(user: User) {
+  register(user) {
     return this.http.post(`${environment.URL}/register`, user);
   }
 
