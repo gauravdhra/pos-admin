@@ -69,13 +69,51 @@ export class RecordingsComponent implements OnInit {
     ]
     this.primengConfig.ripple = true;
   }
+
   loadRecordings(){
-
-    this.recordService.getAll().then(recordings => {
-      this.recordings = recordings;
+    this.recordService.getAll().then((recordings : any) => {
+      let mergedRecordings = [];
+      let length = recordings.length;
+      for(let i=0; i<=length;i+=2){ 
+        if(recordings[i] == undefined){
+          return;
+        }
+        if(recordings[i+1] == undefined) {
+          mergedRecordings.push({
+            id : recordings[i].id, 
+            company_name : recordings[i].company_name,
+            created_at : recordings[i].created_at,
+            path : recordings[i].path,
+            duration : recordings[i].duration,
+            end_time : recordings[i].end_time,
+            start_time : recordings[i].start_time,
+            type : recordings[i].type,
+          });
+        } else {
+          mergedRecordings.push({
+            id : recordings[i].id, 
+            idCamera : recordings[i+1].id,
+            company_name : recordings[i].company_name,
+            company_name_camera : recordings[i+1].company_name,
+            created_at : recordings[i].created_at,
+            created_at_camera : recordings[i+1].created_at,
+            path : recordings[i].path,
+            path_camera : recordings[i+1].path,
+            duration : recordings[i].duration,
+            duration_camera : recordings[i+1].duration,
+            end_time : recordings[i].end_time,
+            end_time_camera: recordings[i+1].end_time,
+            start_time : recordings[i].start_time,
+            start_time_camera : recordings[i+1].start_time,
+            type : recordings[i].type,
+            type_camera : recordings[i+1].type
+          });
+        }
+        this.recordings= mergedRecordings;
+      }
       this.loading = false;
+      console.log(this.recordings)
     });
-
     // this.recordService.getAll()
     //   .subscribe(
     //     data => {
@@ -101,7 +139,12 @@ export class RecordingsComponent implements OnInit {
     this.table.filter(this.formatDate(value), 'date', 'equals')
   }
   playVideo(recording) {
-    if(this.selectedVideos.length == 2){
+    if(this.selectedVideos.length == 1){
+      console.log(this.firstVideoPlayer.nativeElement.src);
+      console.log(this.secondVideoPlayer.nativeElement.src);
+
+      // this.firstVideoPlayer.nativeElement.src = recording.path;
+      // this.secondVideoPlayer.nativeElement.src = recording.path_camera;
       this.resetVideoDialog()
       this.playerDialog = true;   
     }
@@ -141,12 +184,13 @@ export class RecordingsComponent implements OnInit {
     this.secondVideoPlayer.nativeElement.currentTime = event.value
   }
   selectVideo(recording,action) {
+    console.log(recording)
     if (action.checked)
     this.selectedVideos.push(recording);
     else{
       const index = this.selectedVideos.indexOf(recording);
-
       this.selectedVideos.splice(index,1);
+      console.log(this.selectVideo)
     }
         
     // if(recording.type="screen")

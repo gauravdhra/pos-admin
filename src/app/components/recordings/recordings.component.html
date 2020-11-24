@@ -15,14 +15,24 @@
     <ng-template pTemplate="header">
         <tr>
             <th style="width: 3rem"></th>
-            <th pSortableColumn="company_name">Recordings <p-sortIcon field="name"></p-sortIcon>
+            <th style="width: 3rem">Sr. No.</th>
+
+            <th pSortableColumn="company_name">Video Recordings<p-sortIcon field="name"></p-sortIcon>
             </th>
-            <th pSortableColumn="created_at">Date of Recording <p-sortIcon field="date"></p-sortIcon>
+            <th pSortableColumn="duration">Video Duration<p-sortIcon field="representative.name">
+            </p-sortIcon>
             </th>
-            <th pSortableColumn="duration">Duration<p-sortIcon field="representative.name">
-                </p-sortIcon>
+            <th pSortableColumn="company_name_camera">Screen Recordings <p-sortIcon field="name"></p-sortIcon>
             </th>
-            <th >Video
+            <th pSortableColumn="duration">Screen Duration<p-sortIcon field="representative.name">
+            </p-sortIcon></th>
+            <th pSortableColumn="created_at">Date of Video Recording <p-sortIcon field="date"></p-sortIcon>
+            </th>
+            <th pSortableColumn="created_at">Date of Screen Recording <p-sortIcon field="date"></p-sortIcon>
+            </th>
+            <th >Video Time
+            </th>
+            <th >Screen Time
             </th>
             <!-- <th pSortableColumn="status">Status<p-sortIcon field="status"></p-sortIcon>
             </th> -->
@@ -34,6 +44,7 @@
             <th>
                 <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
             </th>
+            <th></th>
             <th>
                 <input pInputText type="text" (input)="dt.filter($event.target.value, 'company_name', 'contains')"
                     placeholder="Search by Name" class="p-column-filter">
@@ -47,6 +58,10 @@
                 <input pInputText type="text" (input)="dt.filter($event.target.value, 'duration', 'contains')"
                     placeholder="Search by Duration" class="p-column-filter">
             </th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
         
             <!-- <th>
                 <p-dropdown [options]="statuses" (onChange)="dt.filter($event.value, 'status', 'equals')"
@@ -69,37 +84,51 @@
         <tr class="p-selectable-row">
             <td>
                 <!-- <p-checkbox  [disabled]="selectedVideos.length == 2" [value]="recording" (onChange)="selectVideo(recording)" ></p-checkbox> -->
-                <p-checkbox [disabled]="selectedVideos.length == 2 && selectedVideos.indexOf(recording) == -1"  [value]="selectedVideos" (onChange)="selectVideo(recording,$event)" ></p-checkbox>
+                <p-checkbox [disabled]="selectedVideos.length == 1 && selectedVideos.indexOf(recording) == -1"  [value]="selectedVideos" (onChange)="selectVideo(recording,$event)" ></p-checkbox>
             </td>
+            <td>{{i+1}}</td>
             <td>
-                <span class="p-column-title">Recordings</span>
+                <span class="p-column-title">Video Recordings</span>
                 {{recording.company_name}}
             </td>
             <td>
-                <span class="p-column-title">Date of Recording</span>
+                <span class="p-column-title">Video Duration</span>
+                <span class="image-text">{{recording.duration}}</span>
+            </td>
+            <td>
+                <span class="p-column-title">Screen Recordings</span>
+                {{recording.company_name_camera}}
+            </td>
+            <td>
+                <span class="p-column-title">Screen Duration</span>
+                <span class="image-text">{{recording.duration_camera}}</span>
+            </td>
+            <td>
+                <span class="p-column-title">Date of Video Recording</span>
                 <span class="image-text">{{recording.created_at | date:'dd MMM yyyy'}}</span>
             </td>
             <td>
-                <span class="p-column-title">Duration</span>
-                <span class="image-text">{{recording.duration}}</span>
+                <span class="p-column-title">Date of Screen Recording</span>
+                <span class="image-text">{{recording.created_at_camera | date:'dd MMM yyyy'}}</span>
             </td>
-            <!-- <td>
-                <span class="p-column-title">Date</span>
-                {{customer.date}}
-            </td> -->
+
+
+            <td>
+                <span class="p-column-title">Video Time</span>
+                {{recording.start_time | date: 'HH:mm:ss'}}
+            </td>
+            <td>
+                <span class="p-column-title">Camera Time</span>
+                {{recording.start_time_camera | date: 'HH:mm:ss'}}
+            </td>
             <!-- <td>
                 <span class="p-column-title">Status</span>
                 <span [class]="'customer-badge status-' + customer.status">{{customer.status}}</span>
             </td> -->
-
-            <td>
-                <span class="p-column-title">Video</span>
-                <span class="image-text">{{recording.type}}</span>
-            </td>
             <td >
                 <i class="pi pi-trash" style="margin-right: 7px"></i>
                 <i class="pi pi-pencil" style="margin-right: 7px"></i>
-                <i class="pi pi-video"  *ngIf="selectedVideos.length == 2 && selectedVideos.indexOf(recording) > -1"
+                <i class="pi pi-video"  *ngIf="selectedVideos.length == 1 && selectedVideos.indexOf(recording) > -1"
                     (click)="playVideo(recording)"></i>
                 <!-- <button pButton type="button"  icon="pi pi-trash"></button>
                 <button pButton type="button"  icon="pi pi-pencil"></button> -->
@@ -122,7 +151,7 @@
             <source [src]="baseUrl+selectedVideos[0]?.path" type="video/mp4">
         </video>
         <video  (timeupdate)="onSecondTimeUpdate($event)" width="50%" controls  #secondVideoPlayer>
-            <source [src]="baseUrl+selectedVideos[1]?.path" type="video/mp4">
+            <source [src]="baseUrl+selectedVideos[0]?.path_camera" type="video/mp4">
         </video>
     </div>
     <ng-template pTemplate="footer" >
